@@ -1,3 +1,46 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Grenze+Gotisch:wght@400;500;600;700&family=MedievalSharp&family=Almendra:wght@400;700&family=UnifrakturMaguntia&display=swap');
+
+/* CSS Variables */
+:root {
+  --primary-color: #1a1a2e;
+  --secondary-color: #c0a080;
+  --secondary-color-rgb: 192, 160, 128;
+  --text-color: #e0e0e0;
+  --gold-gradient: linear-gradient(45deg, rgba(192, 160, 128, 0.2), rgba(192, 160, 128, 0.1));
+  --hero-gradient: linear-gradient(to bottom, rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.95));
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-family: 'Almendra', serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel Decorative', cursive;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 2rem 0;
+  text-shadow: 0 0 10px rgba(192, 160, 128, 0.5);
+}
+
 .main-nav {
   position: fixed;
   top: 0;
@@ -2235,5 +2278,111 @@ h2, h3 {
     margin: 1rem 0;
     padding: 0 1rem;
     text-align: center;
+  }
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--hero-gradient);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 4.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  text-shadow: 0 0 20px rgba(192, 160, 128, 0.8);
+  animation: titleGlow 3s ease-in-out infinite;
+}
+
+.hero-subtitle {
+  font-family: 'MedievalSharp', cursive;
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Main Sections */
+.main-section {
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title {
+  font-family: 'Grenze Gotisch', cursive;
+  font-size: 3rem;
+  color: var(--secondary-color);
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Animations */
+@keyframes titleGlow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(192, 160, 128, 0.8);
+  }
+  50% {
+    text-shadow: 0 0 40px rgba(192, 160, 128, 0.8);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+    letter-spacing: 0.2em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .main-section {
+    padding: 3rem 1rem;
   }
 }
